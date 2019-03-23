@@ -3,8 +3,8 @@
 // @description 原始配色8px滚动条(仅适用于WebKit内核浏览器)
 // @namespace https://github.com/ue1/userscripts
 // @version 1.0.1
-// @run-at document-start
 // @include http*
+// @run-at document-start
 // @compatible chrome
 // @grant none
 // ==/UserScript==
