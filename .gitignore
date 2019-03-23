@@ -1,0 +1,12 @@
+# JetBrains IDE
+.idea
+
+# Windows Cache Files
+Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db
+
+# MacOS Files
+.DS_Store
+.AppleDouble
+.LSOverride
