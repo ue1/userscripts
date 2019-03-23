@@ -3,11 +3,12 @@
 // @description 显示Steam好评百分比(好评位置)
 // @namespace https://github.com/ue1/userscripts
 // @version 1.0.2
-// @run-at document-end
+// @icon https://store.steampowered.com/favicon.ico
 // @include http*://store.steampowered.com*
 // @include http*://steamcommunity.com*
 // @exclude *://store.steampowered.com/widget*
 // @exclude *://store.steampowered.com/checkout*
+// @run-at document-end
 // @compatible chrome
 // @grant none
 // ==/UserScript==
