@@ -44,7 +44,7 @@
     function bindKeyboard() {
         console.log(`✅ 自定义按键已加载`);
         document.onkeydown = (e) => {
-            if (e.metaKey && e.key === 'Backspace') {
+            if ((e.altKey || e.metaKey) && e.key === 'Backspace') {
                 simulateClick();
             }
         };
