@@ -1,10 +1,10 @@
 // ==UserScript==
+// @name        DeepSeek Web 快捷键
 // @namespace   https://github.com/ue1/userscripts
-// @name        DeepSeek Web Key
 // @version     1.0.0
-// @description Add Quick Delete Key
-// @match       https://chat.deepseek.com/*
+// @description 删除快捷键 Windows(Alt + Backspace) / macOS(Cmd + Backspace)
 // @grant       none
+// @match       https://chat.deepseek.com/*
 // ==/UserScript==
 (function () {
     'use strict';
@@ -42,7 +42,7 @@
 
     // 初始化键盘绑定(无延迟，基于真实加载状态)
     function bindKeyboard() {
-        console.log(`✅ 自定义按键已加载`);
+        console.log(`✅自定义按键已加载`);
         document.onkeydown = (e) => {
             if ((e.altKey || e.metaKey) && e.key === 'Backspace') {
                 simulateClick();

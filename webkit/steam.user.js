@@ -1,8 +1,9 @@
 // ==UserScript==
+// @name        Steam好评百分比
 // @namespace   https://github.com/ue1/userscripts
-// @name        Steam 好评百分比
-// @description 显示 Steam 好评百分比(好评位置)
 // @version     1.0.3
+// @description 评价位置显示 Steam 好评百分比
+// @grant       none
 // @match       http://store.steampowered.com/*
 // @match       https://store.steampowered.com/*
 // @match       http://steamcommunity.com/*
@@ -10,7 +11,6 @@
 // @exclude     *://store.steampowered.com/widget*
 // @exclude     *://store.steampowered.com/checkout*
 // @run-at      document-end
-// @grant       none
 // ==/UserScript==
 (function () {
     'use strict';
@@ -22,7 +22,12 @@
         if (item.className.indexOf(rate) !== -1) {
             let attr = item.getAttribute(tips);
             if (!attr) {
-                attr = item.parentNode.parentNode.getAttribute(tips);
+                attr = null;
+                const upNode = item && item.parentNode && item.parentNode.parentNode;
+                // 判断是否有 getAttribute 方法
+                if (upNode && typeof upNode.getAttribute === 'function') {
+                    attr = upNode.getAttribute(tips);
+                }
             }
             if (attr) {
                 const pos = attr.match(/(\d+)%/)[1];
