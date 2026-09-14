@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        OpenCode Web 快捷键
 // @namespace   https://github.com/ue1/userscripts
-// @version     1.0.0
+// @version     1.0.1
 // @description 删除快捷键 Windows(Alt + Backspace) / macOS(Cmd + Backspace)
 // @grant       none
 // @match       http://127.0.0.1:4096/*
@@ -86,7 +86,10 @@
                             simulateClick('div[role="menu"] div:last-of-type');
                             // 设置焦点
                             setTimeout(() => {
-                                document.querySelectorAll('div[role="dialog"] button')[2]?.focus();
+                                // 旧版界面
+                                //document.querySelectorAll('div[role="dialog"] button')[2]?.focus();
+                                // 新版界面
+                                document.querySelector('div[role="dialog"] button[data-variant="danger"]')?.focus();
                             }, 10);
                         }
                     }
