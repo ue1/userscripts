@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name        DeepSeek Web 快捷键
 // @namespace   https://github.com/ue1/userscripts
-// @version     1.0.0
+// @version     1.0.1
 // @description 删除快捷键 Windows(Alt + Backspace) / macOS(Cmd + Backspace)
 // @grant       none
 // @match       https://chat.deepseek.com/*
@@ -14,7 +14,9 @@
         const area = '.ds-scroll-area';
         const hexColor = hexToRgbStr(getComputedStyle(document.querySelector(area)).getPropertyValue('--dsw-specific-sidebar-nav-item-active-accent'))
         const target = [...document.querySelectorAll(area + ' a')].filter(el => {
-            return getComputedStyle(el).backgroundColor === hexColor
+            // console.log(getComputedStyle(el).backgroundColor)
+            // 支持 Dark Reader
+            return getComputedStyle(el).backgroundColor === hexColor ? true : getComputedStyle(el).backgroundColor === 'rgb(32, 35, 36)'
         })
         let el = null;
         if (target && target.length > 0) {
